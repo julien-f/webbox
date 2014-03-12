@@ -1,0 +1,18 @@
+{
+  "name": "webbox",
+  "version": "0.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julien Fontanet <julien.fontanet@isonoe.net> (http://julien.isonoe.net/)",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^1.0.8",
+    "human-format": "^0.1.0",
+    "nodemailer": "^0.6.1",
+    "yargs": "^1.2.1",
+    "assert-plus": "^0.1.5"
+  }
+}

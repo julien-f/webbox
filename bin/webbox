@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+'use strict';
+
+//====================================================================
+
+var WebBox = require('..');
+
+//====================================================================
+
+var opts = require('yargs')
+	.usage('Usage: $0 [<option>...]')
+	.options({
+		h: {
+			alias: 'help',
+			boolean: true,
+			description: 'display this help message',
+		},
+		v: {
+			alias: 'version',
+			boolean: true,
+			description: 'display the version number',
+		},
+	})
+	.check(function (opts) {
+		if (opts.help)
+		{
+			throw '';
+		}
+	})
+	.argv
+;
+
+if (opts.version)
+{
+	var pkg = require('../package');
+	console.log('WebBox version', pkg.version);
+	return;
+}
+
+var webBox = new WebBox();
+
+// Loads configuration.
+require('../config').call(webBox, webBox);
